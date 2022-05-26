@@ -1,6 +1,5 @@
 package com.ktl1.starwars.presentation.planet_dtails.component
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,10 +16,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 
 @Composable
 fun ImageCard(
-    painter: Painter,
     name: String,
     orbital_period: String,
     gravity: String,
@@ -34,9 +33,9 @@ fun ImageCard(
         Box(
             modifier = Modifier.fillMaxSize()
         ) {
-            Image(
-                painter = painter,
-                contentDescription = "",
+            AsyncImage(
+                model = imageData().random(),
+                contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
             )
@@ -86,3 +85,17 @@ fun ImageCard(
         }
     }
 }
+
+fun imageData() = mutableListOf(
+    "https://i.picsum.photos/id/842/800/1200.jpg?hmac=BOjkyxv2iNsjN4vOnBQvuiJo5BpZ5cfYCv855pKgvz0",
+    "https://i.picsum.photos/id/340/800/1200.jpg?hmac=dh3u9xcOLHK_IHeIC8-lsLUpdgokZmvYyg5kUykfBcg",
+    "https://i.picsum.photos/id/556/800/1200.jpg?hmac=Ht6a752AXsadL3VBeQLSdnxcUyYdpnETYRF2KR2exbg",
+    "https://i.picsum.photos/id/283/800/1200.jpg?hmac=Hd6aUOD7MWqg-NhVEbvmv2HpOtdbJ0RH3OGXNq1DYbs",
+    "https://i.picsum.photos/id/43/800/1200.jpg?hmac=_HXroF6RZ36_8O7esVw8druFAt6Z3Z9WiFLUMPpwK24",
+    "https://i.picsum.photos/id/698/800/1200.jpg?hmac=EiHfB-KouESbo9o0BdvWPcSeuyaSZlriN4Nt6Jd8MiI",
+    "https://i.picsum.photos/id/958/800/1200.jpg?hmac=KJqXc5KWnqEA-7Jvfg_XLHrleJcdEZQNWYAju0nYVos",
+    "https://i.picsum.photos/id/299/800/1200.jpg?hmac=CopXy5xs80dPHxgkIXpHwJI8zyPc3Mxlk2N5-PH2jJ0",
+    "https://i.picsum.photos/id/848/800/1200.jpg?hmac=6lPpUFZSMtNQbNOK-DEikT3H4MSNyJHHl6mWUWv69Vc",
+    "https://i.picsum.photos/id/361/800/1200.jpg?hmac=SQagm8QFVAUCFV5osxNfP-WodfewxwTPERCAjodXQ1E"
+
+)

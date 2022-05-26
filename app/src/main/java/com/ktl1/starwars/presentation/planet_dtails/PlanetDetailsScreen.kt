@@ -10,11 +10,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.ktl1.starwars.R
 import com.ktl1.starwars.presentation.planet_dtails.component.ImageCard
 
 
@@ -25,14 +23,12 @@ fun PlanetDetailsScreen(
     val state = viewModel.state.value
     Box(modifier = Modifier.fillMaxSize()) {
         state.planetDetails?.let { planet ->
-            val painter = painterResource(id = R.drawable.sunflower)
             Box(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(16.dp)
             ) {
                 ImageCard(
-                    painter = painter,
                     name = planet.name,
                     orbital_period = planet.orbital_period,
                     gravity = planet.gravity
