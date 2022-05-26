@@ -25,7 +25,7 @@ fun PlanetListItem(
         modifier = Modifier
             .fillMaxWidth()
             .clickable { onItemClick(planet) }
-            .padding(20.dp),
+            .padding(vertical = 20.dp, horizontal = 30.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
